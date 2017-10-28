@@ -47,8 +47,9 @@ class User implements SplSubject, ArrayAccess
             'mobile' => $this->mobile,
         ];
 
+        /* @var $observer SPLObserver */
         foreach ($this->observers as $observer) {
-            $observer->update($this, $user);
+            $observer->update($this);
         }
     }
 
